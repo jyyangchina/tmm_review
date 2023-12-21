@@ -1,0 +1,21 @@
+1. Creating the environment by:
+conda env create -f lvc.yaml
+
+2. Downloading the pretrained model named "model_psnr.pth.tar" and put the model in this directory.
+link1: https://disk.pku.edu.cn:443/link/7384CC00EB4FF1998B4B7E246A413CEB  Due：2024-03-01 23:59
+link2: https://pan.baidu.com/s/1kO8R02WsXMveX_rLmN3uLQ code: whju 
+
+3. Preparing the test dataset:
+ffmpeg -pix_fmt yuv420p -s 1920x1080 -i BasketballDrive_1920x1080_50fps_8bit_P420.yuv  BasketballDrive_1920x1080_50fps_8bit_P420/f%03d.png
+The folder structure of dataset is like:
+/home/yangjy/dataset/HEVC_B_png/
+    * BasketballDrive_1920x1080_50fps_8bit_P420/
+        - f001.png
+        - f002.png
+        - ...
+    * BQTerrace_1920x1080_60fps_8bit_P420/
+        - f001.png
+        - f002.png
+        - ...
+        
+4. Run script_test.sh to perform compression.
